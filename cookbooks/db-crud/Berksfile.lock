@@ -1,0 +1,9 @@
+DEPENDENCIES
+  db-crud
+    path: .
+    metadata: true
+
+GRAPH
+  chef_handler (3.0.3)
+  db-crud (0.1.0)
+    chef_handler (~> 3.0.3)
