@@ -11,12 +11,19 @@ default_source :supermarket
 
 # run_list: chef-client will run these recipes in the order specified.
 run_list  'chef-client',
-          'opsworks-webserver',
-          'audit'
+          'my-nodejs',
+		  'my-mongodb',
+		  'express-app',
+		  'populate-db',
+		  'db-crud'
 # add 'ssh-hardening' to your runlist to fix compliance issues detected by the ssh-baseline profile
 
 # Specify a custom source for a single cookbook:
-cookbook 'opsworks-webserver', path: 'site-cookbooks/opsworks-webserver'
+cookbook 'my-nodejs', path: './cookbooks/my-nodejs'
+cookbook 'my-mongodb', path: './cookbooks/my-mongodb'
+cookbook 'express-app', path: './cookbooks/express-app'
+cookbook 'populate-db', path: './cookbooks/populate-db'
+cookbook 'db-crud', path: './cookbooks/db-crud'
 
 # Policyfile defined attributes
 
